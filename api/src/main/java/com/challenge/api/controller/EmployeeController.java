@@ -22,6 +22,9 @@ import com.challenge.api.model.Employee;
 @RequestMapping("/api/v1/employee")
 public class EmployeeController {
 
+    /*
+     *  New static class that I have created to serve as a Service layer.
+     */
     static class EmployeeService {
         private static ConcurrentHashMap<UUID, Employee> employees = new ConcurrentHashMap<>();
 
