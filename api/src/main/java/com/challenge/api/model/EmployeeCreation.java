@@ -1,11 +1,12 @@
 package main.java.com.challenge.api.model;
 
-// import main.java.com.challenge.api.model;
-
 import com.challenge.api.model.Employee;
 import java.time.Instant;
 import java.util.UUID;
 
+/*
+ * Created the EmployeeCreation class to implement the Employee interface
+ */
 public class EmployeeCreation implements Employee {
     private UUID uuid;
     private String firstName;
@@ -132,7 +133,6 @@ public class EmployeeCreation implements Employee {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return "ID: " + uuid + " -> " + firstName + " " + lastName + "(" + jobTitle + "): " + salary + ", " + age;
     }
 }

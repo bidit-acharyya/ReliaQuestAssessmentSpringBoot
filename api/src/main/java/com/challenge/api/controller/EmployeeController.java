@@ -4,15 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-
 import main.java.com.challenge.api.model.EmployeeCreation;
-
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
-
 import com.challenge.api.model.Employee;
 
 /**
@@ -23,9 +19,13 @@ import com.challenge.api.model.Employee;
 public class EmployeeController {
 
     /*
-     *  New static class that I have created to serve as a Service layer.
+     * New static class that I have created to serve as a Service layer.
      */
     static class EmployeeService {
+        /*
+         * Utilized a ConcurrentHashMap instead of HashMap as this service will be used by multiple users,
+         * potentially at the same time, and map operations on a ConcurrentHashMap are thread-safe.
+         */
         private static ConcurrentHashMap<UUID, Employee> employees = new ConcurrentHashMap<>();
 
         public EmployeeService() {
